@@ -163,15 +163,24 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-banner-container h3 {
-  font-size: 4rem;
-  margin-top: 4px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-top: 8px;
+  color: var(--text-primary);
+  letter-spacing: -1px;
 }
 
 .hero-banner-container h1 {
-  color: white;
-  font-size: 10rem;
-  margin-left: -20px;
+  font-size: 8rem;
+  font-weight: 900;
+  margin-left: -5px;
   text-transform: uppercase;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -3px;
+  line-height: 0.9;
 }
 
 .hero-banner-image {
