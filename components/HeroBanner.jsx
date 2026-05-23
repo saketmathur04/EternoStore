@@ -12,6 +12,10 @@ const HeroBanner = ({ heroBanner }) => {
         <h1>{heroBanner.largeText1}</h1>
         <img src={urlFor(heroBanner.image)} alt={heroBanner.product || 'Featured product'} className="hero-banner-image" />
 
+        <p className="hero-tagline">
+          Discover studio-grade audio engineered for those who demand nothing but the best.
+        </p>
+
         <div>
           <Link href={`/product/${heroBanner.product}`}>
             <button type="button">{heroBanner.buttonText}</button>
