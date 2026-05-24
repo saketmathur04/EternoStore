@@ -390,44 +390,36 @@ a { color: inherit; text-decoration: none; }
 .quantity-desc .plus { color: #16a34a; }
 .quantity-desc .plus:hover { background: #f0fdf4; }
 
-.buttons{
-  display: flex;
-  gap: 30px;
-  margin-top: 40px;
-}
-.add-to-cart{
-  padding: 10px 20px;
-  border: 1px solid #f02d34 ;
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: white;
-  color: #f02d34;
+.buttons .add-to-cart {
+  padding: 14px 28px;
+  border: 2px solid var(--primary);
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background: white;
+  color: var(--primary);
   cursor: pointer;
   width: 200px;
-   transform: scale(1, 1);
-  transition: transform 0.5s ease;
+  border-radius: var(--radius);
+  transition: var(--transition);
 }
-.add-to-cart:hover{
-  transform:scale(1.1,1.1);
-}
-.buy-now{
-  width: 200px;
+.buttons .add-to-cart:hover { background: #fff5f5; transform: translateY(-2px); }
 
-  padding: 10px 20px;
-  background-color: #f02d34;
+.buttons .buy-now {
+  width: 200px;
+  padding: 14px 28px;
+  background: var(--gradient);
   color: white;
   border: none;
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 500;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-   transform: scale(1, 1);
-  transition: transform 0.5s ease;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(240,45,52,0.3);
 }
-.buy-now:hover{
-  transform:scale(1.1,1.1);
-}
+.buttons .buy-now:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
 
 .maylike-products-wrapper{
   margin-top: 120px;
