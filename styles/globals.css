@@ -589,70 +589,52 @@ padding: 30px 65px;
   margin: auto;
 }
 
-/* FOOTER BANNER */
+/* ===== FOOTER BANNER ===== */
 .footer-banner-container {
-  padding: 100px 40px;
-  background-color: #f02d34;
-  border-radius: 15px;
+  padding: 80px 40px;
+  background: var(--gradient);
+  border-radius: var(--radius-lg);
   position: relative;
-  height: 400px;
-  line-height: 1; 
+  min-height: 380px;
+  line-height: 1;
   color: white;
   width: 100%;
-  margin-top: 120px;
+  margin-top: 100px;
+  overflow: hidden;
 }
-
-.banner-desc {
-  display: flex;
-  justify-content: space-between;
-}
-
-.banner-desc button {
-  border-radius: 15px;
-  padding: 10px 16px;
-  background-color: white;
-  color: #f02d34;
-  border: none;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.banner-desc .left h3 {
-  font-weight: 900;
-  font-size: 80px;
-  margin-left: 25px;
-}
-
-.banner-desc .left p {
-  margin:18px;
-}
-
-.footer-banner-image {
+.footer-banner-container::after {
+  content: '';
   position: absolute;
-  top: -25%;
-  left: 25%;
-  width: 450px;
-  height: 450px;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.banner-desc .right {
-  line-height: 1.4;
+.banner-desc { display: flex; justify-content: space-between; position: relative; z-index: 2; }
+.banner-desc button {
+  border-radius: var(--radius);
+  padding: 14px 32px;
+  background-color: white;
+  color: var(--primary);
+  border: none;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
-.banner-desc .right h3 {
-  font-weight: 800;
-  font-size: 60px;
-}
-
-.banner-desc .right p {
-  font-size: 18px;
-}
-
-.banner-desc .right .small-text {
-  font-size: 14px;
-}
+.banner-desc button:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0,0,0,0.2); }
+.banner-desc .left h3 { font-weight: 900; font-size: 70px; margin-left: 20px; letter-spacing: -2px; }
+.banner-desc .left p { margin: 14px 20px; font-size: 16px; opacity: 0.9; }
+.footer-banner-image { position: absolute; top: -25%; left: 25%; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2)); }
+.banner-desc .right { line-height: 1.4; }
+.banner-desc .right h3 { font-weight: 800; font-size: 55px; letter-spacing: -1px; }
+.banner-desc .right p { font-size: 16px; opacity: 0.9; }
 
 /* FOOTER */
 .footer-container {
