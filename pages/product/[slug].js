@@ -6,10 +6,13 @@ import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
-  const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+
+  if (!product) return null;
+
+  const { image, name, details, price } = product;
 
   const handleBuyNow = () => {
     onAdd(product, qty);
