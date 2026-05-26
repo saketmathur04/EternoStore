@@ -8,11 +8,11 @@ import { useStateContext } from '../../context/StateContext';
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
   const handleBuyNow = () => {
     onAdd(product, qty);
-
     setShowCart(true);
   }
 
@@ -21,8 +21,21 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src={urlFor(image && image[index])} className="product-detail-image" />
+            <img 
+              src={urlFor(image && image[index])} 
+              className="product-detail-image" 
+              onClick={() => setIsZoomed(true)}
+            />
           </div>
+          
+          {isZoomed && (
+            <div className="lightbox-overlay" onClick={() => setIsZoomed(false)}>
+              <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                <button className="lightbox-close" onClick={() => setIsZoomed(false)}>✕</button>
+                <img src={urlFor(image && image[index])} className="lightbox-image" />
+              </div>
+            </div>
+          )}
           <div className="small-images-container">
             {image?.map((item, i) => (
               <img 
