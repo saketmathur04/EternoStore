@@ -1,10 +1,16 @@
 import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { MdOutlineCancel } from 'react-icons/md';
 
 const Canceled = () => {
   return (
     <div className="cancel-wrapper">
+      <Head>
+        <title>Order Canceled - SonicZone</title>
+        <meta name="description" content="Your payment was canceled. Your cart is saved." />
+        <meta name="robots" content="noindex" />
+      </Head>
       <div className="cancel">
         <p className="icon" style={{ color: '#f02d34', fontSize: '48px' }}>
           <MdOutlineCancel />

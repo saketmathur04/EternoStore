@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { BsBagCheckFill } from 'react-icons/bs';
 
@@ -18,6 +19,11 @@ const Success = () => {
 
   return (
     <div className="success-wrapper">
+      <Head>
+        <title>Order Success - SonicZone</title>
+        <meta name="description" content="Thank you for your purchase from SonicZone. Your order has been placed successfully." />
+        <meta name="robots" content="noindex" />
+      </Head>
       <div className="success">
         <p className="icon">
           <BsBagCheckFill />

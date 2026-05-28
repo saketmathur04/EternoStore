@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
@@ -21,6 +22,10 @@ const ProductDetails = ({ product, products }) => {
 
   return (
     <div>
+      <Head>
+        <title>{name} - SonicZone Premium Audio</title>
+        <meta name="description" content={details || `Get ${name} at SonicZone. Enjoy premium sound quality and style.`} />
+      </Head>
       <div className="product-detail-container">
         <div>
           <div className="image-container">

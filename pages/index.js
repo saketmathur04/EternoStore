@@ -1,10 +1,16 @@
 import React from 'react';
+import Head from 'next/head';
 
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
 const Home = ({ products, bannerData }) => (
   <div>
+    <Head>
+      <title>SonicZone - Premium Audio Gear Store</title>
+      <meta name="description" content="Welcome to SonicZone. Discover our curated range of premium headphones, earbuds, speakers, and top-tier audio equipment." />
+      <meta name="keywords" content="audio gear, premium headphones, speakers, earbuds, audiophile" />
+    </Head>
     <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
     <div className="products-heading">
       <h2>Best Selling Products</h2>
