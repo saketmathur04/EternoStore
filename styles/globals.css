@@ -797,3 +797,41 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-5px);
   box-shadow: var(--shadow-glow);
 }
+
+/* ===== SEARCH BAR ===== */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-primary);
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(240, 45, 52, 0.15);
+}
+
+.no-products {
+  font-size: 18px;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 40px 0;
+  width: 100%;
+}
