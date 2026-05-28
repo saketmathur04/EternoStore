@@ -94,6 +94,12 @@ export const StateContext = ({ children }) => {
     }
   }
 
+  const clearCart = () => {
+    setCartItems([]);
+    setTotalPrice(0);
+    setTotalQuantities(0);
+  }
+
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
   }
@@ -120,6 +126,10 @@ export const StateContext = ({ children }) => {
         onAdd,
         toggleCartItemQuanitity,
         onRemove,
+        clearCart,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantities
       }}
     >
       {children}

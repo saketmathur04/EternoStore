@@ -10,7 +10,7 @@ import getStripe from '../lib/getStripe';
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove, clearCart } = useStateContext();
 
   const handleCheckout = async () => {
     try {
@@ -48,14 +48,45 @@ const Cart = () => {
   return (
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
-        <button
-        type="button"
-        className="cart-heading"
-        onClick={() => setShowCart(false)}>
-          <AiOutlineLeft />
-          <span className="heading">Your Cart</span>
-          <span className="cart-num-items">({totalQuantities} items)</span>
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+          <button
+          type="button"
+          className="cart-heading"
+          onClick={() => setShowCart(false)}>
+            <AiOutlineLeft />
+            <span className="heading">Your Cart</span>
+            <span className="cart-num-items">({totalQuantities} items)</span>
+          </button>
+          {cartItems.length >= 1 && (
+            <button
+              type="button"
+              className="clear-cart-btn"
+              onClick={clearCart}
+              style={{
+                background: 'transparent',
+                border: '1px solid var(--primary)',
+                color: 'var(--primary)',
+                padding: '6px 12px',
+                borderRadius: 'var(--radius-sm)',
+                cursor: 'pointer',
+                fontWeight: 600,
+                fontSize: '13px',
+                transition: 'var(--transition)',
+                marginRight: '10px'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'var(--primary)';
+                e.target.style.color = '#fff';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'transparent';
+                e.target.style.color = 'var(--primary)';
+              }}
+            >
+              Clear Cart
+            </button>
+          )}
+        </div>
 
         {cartItems.length < 1 && (
           <div className="empty-cart">
