@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
@@ -11,7 +12,25 @@ const ProductDetails = ({ product, products }) => {
   const [isZoomed, setIsZoomed] = useState(false);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
-  if (!product) return null;
+  if (!product) {
+    return (
+      <div className="cancel-wrapper">
+        <div className="cancel">
+          <h2>Product Not Found</h2>
+          <p className="description" style={{ marginTop: '10px' }}>
+            The product you're looking for doesn't exist or has been removed.
+          </p>
+          <Link href="/">
+            <div className="btn-container">
+              <button type="button" className="btn">
+                Back to Home
+              </button>
+            </div>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   const { image, name, details, price } = product;
 
