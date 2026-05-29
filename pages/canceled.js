@@ -12,43 +12,27 @@ const Canceled = () => {
         <meta name="robots" content="noindex" />
       </Head>
       <div className="cancel">
-        <p className="icon" style={{ color: '#f02d34', fontSize: '48px' }}>
+        <p className="icon">
           <MdOutlineCancel />
         </p>
-        <h2 style={{ 
-          marginTop: '20px', 
-          fontWeight: 800, 
-          fontSize: '28px', 
-          color: '#1d1d1f',
-          letterSpacing: '-0.5px'
-        }}>
+        <h2>
           Payment Cancelled
         </h2>
-        <p style={{ 
-          fontSize: '15px', 
-          fontWeight: 500, 
-          textAlign: 'center', 
-          color: '#6e6e73', 
-          marginTop: '8px' 
-        }}>
+        <p className="email-msg">
           No worries — your cart items are still saved.
         </p>
-        <p style={{ 
-          fontSize: '14px', 
-          fontWeight: 500, 
-          textAlign: 'center', 
-          color: '#86868b', 
-          marginTop: '24px' 
-        }}>
+        <p className="description">
           If you experienced any issues, please email
-          <a className="email" href="mailto:support@soniczone.com" style={{ marginLeft: '4px', color: '#f02d34', fontWeight: 600 }}>
+          <a className="email" href="mailto:support@soniczone.com">
             support@soniczone.com
           </a>
         </p>
         <Link href="/">
-          <button type="button" className="btn" style={{ width: '300px' }}>
-            Continue Shopping
-          </button>
+          <div className="btn-container">
+            <button type="button" className="btn">
+              Continue Shopping
+            </button>
+          </div>
         </Link>
       </div>
     </div>
