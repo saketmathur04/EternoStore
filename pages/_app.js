@@ -9,7 +9,17 @@ function MyApp({ Component, pageProps }) {
   return (
     <StateContext>
       <Layout>
-        <Toaster />
+        <Toaster 
+          toastOptions={{
+            style: {
+              background: '#fff',
+              color: '#1d1d1f',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              borderRadius: '10px',
+              fontWeight: 500,
+            },
+          }}
+        />
         <Component {...pageProps} />
       </Layout>
     </StateContext>
