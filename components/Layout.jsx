@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
         <title>SonicZone - Premium Audio Gear</title>
         <meta name="description" content="Shop premium audio gear, headphones, earphones, speakers and more at SonicZone." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
         <Navbar />
