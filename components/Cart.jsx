@@ -62,26 +62,6 @@ const Cart = () => {
               type="button"
               className="clear-cart-btn"
               onClick={clearCart}
-              style={{
-                background: 'transparent',
-                border: '1px solid var(--primary)',
-                color: 'var(--primary)',
-                padding: '6px 12px',
-                borderRadius: 'var(--radius-sm)',
-                cursor: 'pointer',
-                fontWeight: 600,
-                fontSize: '13px',
-                transition: 'var(--transition)',
-                marginRight: '10px'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = 'var(--primary)';
-                e.target.style.color = '#fff';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = 'transparent';
-                e.target.style.color = 'var(--primary)';
-              }}
             >
               Clear Cart
             </button>
