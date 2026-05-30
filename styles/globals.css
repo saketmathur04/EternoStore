@@ -389,7 +389,7 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
   padding: 4px;
 }
-.small-image:hover { border-color: var(--text-muted); }
+.small-image:hover { border-color: var(--text-muted); transform: scale(1.05); }
 .selected-image { border-color: var(--primary) !important; }
 
 .reviews { color: #fbbf24; margin-top: 10px; display: flex; gap: 3px; align-items: center; }
