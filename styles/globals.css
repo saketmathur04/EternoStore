@@ -207,6 +207,7 @@ a { color: inherit; text-decoration: none; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 10px 20px rgba(240,45,52,0.15));
   letter-spacing: -3px;
   line-height: 0.9;
 }
