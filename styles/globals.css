@@ -623,7 +623,7 @@ a { color: inherit; text-decoration: none; }
   padding: 8px;
   border-radius: 50%;
 }
-.remove-item:hover { color: var(--primary); background: #fff5f5; }
+.remove-item:hover { color: white; background: var(--primary); transform: scale(1.1); box-shadow: 0 4px 12px rgba(240,45,52,0.3); }
 .cart-bottom {
   position: absolute;
   bottom: 0;
