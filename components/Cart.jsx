@@ -77,6 +77,7 @@ const Cart = () => {
             <Link href="/">
               <button
                 type="button"
+                aria-label="Continue shopping to home page"
                 onClick={() => setShowCart(false)}
                 className="btn"
               >
