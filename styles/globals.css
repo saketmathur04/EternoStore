@@ -436,7 +436,7 @@ a { color: inherit; text-decoration: none; }
 .quantity-desc span:active { transform: scale(0.9); }
 .quantity-desc .minus { border-right: 1px solid var(--border); color: var(--primary); }
 .quantity-desc .minus:hover { background: #fff5f5; }
-.quantity-desc .num { border-right: 1px solid var(--border); font-size: 16px; font-weight: 600; cursor: default; }
+.quantity-desc .num { border-right: 1px solid var(--border); font-size: 16px; font-weight: 600; cursor: default; user-select: none; }
 .quantity-desc .plus { color: #16a34a; }
 .quantity-desc .plus:hover { background: #f0fdf4; }
 
