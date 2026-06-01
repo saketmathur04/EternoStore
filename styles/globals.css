@@ -697,11 +697,11 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 .banner-desc button:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
-.banner-desc .left h3 { font-weight: 900; font-size: 70px; margin-left: 20px; letter-spacing: -2px; }
+.banner-desc .left h3 { font-weight: 900; font-size: 70px; margin-left: 20px; letter-spacing: -2px; text-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .banner-desc .left p { margin: 14px 20px; font-size: 16px; opacity: 0.9; }
 .footer-banner-image { position: absolute; top: -15%; left: 25%; width: 450px; height: 450px; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2)); }
 .banner-desc .right { line-height: 1.4; }
-.banner-desc .right h3 { font-weight: 800; font-size: 55px; letter-spacing: -1px; }
+.banner-desc .right h3 { font-weight: 800; font-size: 55px; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .banner-desc .right p { font-size: 16px; opacity: 0.9; }
 
 /* ===== FOOTER ===== */
