@@ -10,7 +10,7 @@ const HeroBanner = ({ heroBanner }) => {
         <p className="beats-solo">{heroBanner.smallText}</p>
         <h3>{heroBanner.midText}</h3>
         <h1>{heroBanner.largeText1}</h1>
-        <img src={urlFor(heroBanner.image)} alt={heroBanner.product || 'Featured product'} className="hero-banner-image" />
+        <img src={urlFor(heroBanner.image)} alt={heroBanner.product || 'Featured product'} title={heroBanner.product || 'Featured product'} className="hero-banner-image" />
 
         <p className="hero-tagline">
           Discover studio-grade audio engineered for those who demand nothing but the best.
