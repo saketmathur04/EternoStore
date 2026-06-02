@@ -295,7 +295,7 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 16px;
 }
 .product-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-lg);
   border-color: transparent;
 }
