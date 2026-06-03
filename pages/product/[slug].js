@@ -68,6 +68,8 @@ const ProductDetails = ({ product, products }) => {
               <img 
                 key={i}
                 src={urlFor(item)}
+                alt={`Product thumbnail ${i + 1}`}
+                role="button"
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
               />
