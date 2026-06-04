@@ -614,7 +614,9 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-soft);
   object-fit: contain;
   padding: 10px;
+  transition: var(--transition);
 }
+.product .cart-product-image:hover { opacity: 0.8; }
 
 .item-desc { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .item-desc .flex { display: flex; justify-content: space-between; align-items: flex-start; color: var(--text-primary); }
