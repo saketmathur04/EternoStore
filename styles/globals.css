@@ -552,6 +552,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius-sm);
 }
 .cart-heading:hover { background: var(--bg-soft); }
+.cart-heading:active { transform: scale(0.95); }
 .cart-heading .heading { margin-left: 8px; font-size: 18px; font-weight: 700; }
 .cart-num-items { margin-left: 8px; color: var(--primary); font-weight: 600; }
 
