@@ -10,7 +10,10 @@ const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
   
   useEffect(() => {
-    localStorage.clear();
+    // Only clear cart-specific localStorage keys, not all app data
+    localStorage.removeItem('cartItems');
+    localStorage.removeItem('totalPrice');
+    localStorage.removeItem('totalQuantities');
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
