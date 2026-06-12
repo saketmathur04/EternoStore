@@ -14,6 +14,15 @@ const Layout = ({ children }) => {
         <meta name="keywords" content="premium audio, headphones, earphones, speakers, audiophile" />
         <meta name="author" content="SonicZone" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Open Graph for Facebook, LinkedIn, Discord */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SonicZone - Premium Audio Gear" />
+        <meta property="og:description" content="Shop premium audio gear, headphones, earphones, speakers and more at SonicZone." />
+        <meta property="og:site_name" content="SonicZone" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SonicZone - Premium Audio Gear" />
+        <meta name="twitter:description" content="Shop premium audio gear, headphones, earphones, speakers and more at SonicZone." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
