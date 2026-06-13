@@ -12,13 +12,22 @@ const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove, clearCart } = useStateContext();
 
-  // Lock body scroll while cart is open to prevent background scrolling
+  // Lock body scroll and enable Escape key to close cart
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setShowCart(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
     return () => {
       document.body.style.overflow = 'auto';
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [setShowCart]);
 
   const handleCheckout = async () => {
     try {
