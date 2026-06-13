@@ -55,6 +55,15 @@ const ProductDetails = ({ product, products }) => {
       <Head>
         <title>{name} - SonicZone Premium Audio</title>
         <meta name="description" content={details || `Get ${name} at SonicZone. Enjoy premium sound quality and style.`} />
+        {/* Dynamic Open Graph tags for rich social previews */}
+        <meta property="og:title" content={`${name} - SonicZone`} />
+        <meta property="og:description" content={details || `Get ${name} at SonicZone for $${price}.`} />
+        <meta property="og:type" content="product" />
+        {image && <meta property="og:image" content={urlFor(image[0]).url()} />}
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${name} - SonicZone`} />
+        <meta name="twitter:description" content={details || `Get ${name} at SonicZone for $${price}.`} />
       </Head>
       <div className="product-detail-container">
         <div>
