@@ -21,19 +21,24 @@ const Home = ({ products, bannerData }) => {
       </Head>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
       
-      <div className="search-container">
+      <div className="search-container" role="search">
         <input
           type="text"
           placeholder="Search premium products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
+          aria-label="Search products"
         />
       </div>
 
       <div className="products-heading">
         <h2>Best Selling Products</h2>
-        <p>Handpicked audio gear loved by thousands of customers worldwide</p>
+        <p>
+          {searchTerm
+            ? `${filteredProducts?.length || 0} result${filteredProducts?.length !== 1 ? 's' : ''} for "${searchTerm}"`
+            : 'Handpicked audio gear loved by thousands of customers worldwide'}
+        </p>
       </div>
 
       <div className="products-container">
