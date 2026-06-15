@@ -70,6 +70,7 @@ const ProductDetails = ({ product, products }) => {
           <div className="image-container">
             <img 
               src={urlFor(image && image[index])} 
+              alt={name}
               className="product-detail-image" 
               onClick={() => setIsZoomed(true)}
             />
@@ -79,7 +80,7 @@ const ProductDetails = ({ product, products }) => {
             <div className="lightbox-overlay" onClick={() => setIsZoomed(false)}>
               <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                 <button className="lightbox-close" onClick={() => setIsZoomed(false)}>✕</button>
-                <img src={urlFor(image && image[index])} className="lightbox-image" />
+                <img src={urlFor(image && image[index])} alt={`${name} - zoomed view`} className="lightbox-image" />
               </div>
             </div>
           )}
