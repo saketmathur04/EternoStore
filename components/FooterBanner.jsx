@@ -18,12 +18,14 @@ const FooterBanner = ({ footerBanner: { discount, largeText1, largeText2, saleTi
           <h3>{midText}</h3>
           <p>{desc}</p>
           <Link href={`/product/${product}`}>
-            <button type="button">{buttonText}</button>
+            <button type="button" aria-label={`${buttonText} - ${product}`}>{buttonText}</button>
           </Link>
         </div>
 
         <img 
-          src={urlFor(image)} className="footer-banner-image"
+          src={urlFor(image)} 
+          alt={`${product || 'Featured product'} promotional banner`}
+          className="footer-banner-image"
         />
       </div>
     </div>
