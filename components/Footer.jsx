@@ -6,10 +6,10 @@ const Footer = () => {
     <div className="footer-container">
       <p>{new Date().getFullYear()} SonicZone. All rights reserved.</p>
       <div className="icons">
-        <a href="#" aria-label="Visit our Instagram page">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
           <AiFillInstagram />
         </a>
-        <a href="#" aria-label="Visit our Twitter page">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter page">
           <AiOutlineTwitter />
         </a>
       </div>
