@@ -344,12 +344,12 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-soft);
   width: 420px;
   height: 420px;
-  cursor: pointer;
+  cursor: zoom-in;
   transition: var(--transition);
   object-fit: contain;
   padding: 20px;
 }
-.product-detail-image:hover { box-shadow: var(--shadow-lg); }
+.product-detail-image:hover { box-shadow: var(--shadow-lg); transform: scale(1.02); }
 
 /* ===== LIGHTBOX ===== */
 .lightbox-overlay {
