@@ -99,6 +99,7 @@ export const StateContext = ({ children }) => {
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
+    toast.success('Cart cleared successfully.');
   }
 
   const incQty = () => {
