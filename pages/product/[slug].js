@@ -23,6 +23,12 @@ const ProductDetails = ({ product, products }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isZoomed]);
 
+  // Reset local state when navigating between products
+  useEffect(() => {
+    setIndex(0);
+    setIsZoomed(false);
+  }, [product]);
+
   if (!product) {
     return (
       <div className="cancel-wrapper">
