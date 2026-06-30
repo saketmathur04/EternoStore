@@ -126,6 +126,7 @@ const Cart = () => {
                   <button
                     type="button"
                     className="remove-item"
+                    aria-label={`Remove ${item.name} from cart`}
                     onClick={() => onRemove(item)}
                   >
                     <TiDeleteOutline />
