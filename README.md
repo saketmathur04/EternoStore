@@ -78,7 +78,7 @@ flowchart LR
     B -->|cartItems, totalPrice, totalQuantities| C[Cart Drawer]
     C -->|toggleCartItemQuanitity| B
     C -->|onRemove| B
-    C -->|handleCheckout| D[/api/stripe]
+    C -->|handleCheckout| D["/api/stripe"]
 ```
 
 When a user clicks "Add to Cart", the `onAdd` function in StateContext checks if the product is already in the cart. If it is, the quantity is updated. If not, the product is added with the selected quantity. The cart drawer reads `cartItems`, `totalPrice`, and `totalQuantities` from context and renders them. Quantity controls call `toggleCartItemQuanitity` which filters out the product, updates its quantity, and spreads it back into the array.
