@@ -37,6 +37,10 @@ SonicZone is a full-stack ecommerce application for selling audio products — h
   <img src="docs/screenshots/product_detail.png" alt="SonicZone Product Detail" width="48%">
   <img src="docs/screenshots/cart.png" alt="SonicZone Shopping Cart" width="48%">
 </div>
+<div align="center">
+  <img src="docs/screenshots/checkout.png" alt="SonicZone Stripe Checkout" width="48%">
+  <img src="docs/screenshots/success.png" alt="SonicZone Success Page" width="48%">
+</div>
 
 ## Architecture
 
