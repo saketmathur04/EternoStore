@@ -9,6 +9,7 @@ const Layout = ({ children }) => {
     <div className="layout">
       <Head>
         <title>SonicZone Store</title>
+        <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
       </Head>
       <header>
         <Navbar />
