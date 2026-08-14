@@ -340,10 +340,4 @@ Things I'd add if I continue working on this:
 - **Inventory management** — Track stock and prevent overselling
 - **Reviews** — Let users rate and review products
 
-## Author
 
-**Saket Mathur**
-
-BTech Computer Science — 4th Year
-
-[GitHub](https://github.com/saketmathur04)
