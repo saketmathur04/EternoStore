@@ -2,6 +2,11 @@
 
 SonicZone is a full-stack ecommerce application for selling audio products — headphones, earbuds, speakers, and neckbands. I built this to learn how a modern online store works end-to-end: fetching product data from a headless CMS, managing cart state on the client, and handling payments through Stripe Checkout. The store content is fully dynamic — products, prices, images, and promotional banners are all managed through Sanity Studio, so nothing is hardcoded in the frontend.
 
+## 🚀 Live Demo
+
+- **Frontend Website (Next.js):** [sonic-zone-git-main-saket-mathur-s-projects.vercel.app](https://sonic-zone-git-main-saket-mathur-s-projects.vercel.app)
+- **Admin Dashboard (Sanity CMS):** [soniczone-admin.sanity.studio](https://soniczone-admin.sanity.studio)
+
 ## Tech Stack
 
 | Technology | Purpose |
