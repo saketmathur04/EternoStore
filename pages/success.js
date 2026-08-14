@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { BsBagCheckFill } from 'react-icons/bs';
 
@@ -10,10 +9,7 @@ const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
   
   useEffect(() => {
-    // Only clear cart-specific localStorage keys, not all app data
-    localStorage.removeItem('cartItems');
-    localStorage.removeItem('totalPrice');
-    localStorage.removeItem('totalQuantities');
+    localStorage.clear();
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
@@ -22,11 +18,6 @@ const Success = () => {
 
   return (
     <div className="success-wrapper">
-      <Head>
-        <title>Order Success - SonicZone</title>
-        <meta name="description" content="Thank you for your purchase from SonicZone. Your order has been placed successfully." />
-        <meta name="robots" content="noindex" />
-      </Head>
       <div className="success">
         <p className="icon">
           <BsBagCheckFill />
@@ -35,16 +26,14 @@ const Success = () => {
         <p className="email-msg">Check your email inbox for the receipt.</p>
         <p className="description">
           If you have any questions, please email
-          <a className="email" href="mailto:support@soniczone.com">
-            support@soniczone.com
+          <a className="email" href="mailto:order@example.com">
+            order@example.com
           </a>
         </p>
         <Link href="/">
-          <div className="btn-container">
-            <button type="button" className="btn">
-              Continue Shopping
-            </button>
-          </div>
+          <button type="button" width="300px" className="btn">
+            Continue Shopping
+          </button>
         </Link>
       </div>
     </div>

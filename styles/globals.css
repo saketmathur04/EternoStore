@@ -929,3 +929,27 @@ a { color: inherit; text-decoration: none; }
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.hero-banner-container {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.footer-banner-container {
+  animation: fadeInUp 0.8s ease-out forwards;
+}

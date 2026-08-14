@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
@@ -8,95 +6,28 @@ import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
-  const [index, setIndex] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
-  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
-
-  // Close lightbox on Escape key press
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isZoomed) {
-        setIsZoomed(false);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isZoomed]);
-
-  // Reset local state when navigating between products
-  useEffect(() => {
-    setIndex(0);
-    setIsZoomed(false);
-  }, [product]);
-
-  if (!product) {
-    return (
-      <div className="cancel-wrapper">
-        <div className="cancel">
-          <h2>Product Not Found</h2>
-          <p className="description" style={{ marginTop: '10px' }}>
-            The product you're looking for doesn't exist or has been removed.
-          </p>
-          <Link href="/">
-            <div className="btn-container">
-              <button type="button" className="btn">
-                Back to Home
-              </button>
-            </div>
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
   const { image, name, details, price } = product;
+  const [index, setIndex] = useState(0);
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
   const handleBuyNow = () => {
     onAdd(product, qty);
+
     setShowCart(true);
   }
 
   return (
     <div>
-      <Head>
-        <title>{name} - SonicZone Premium Audio</title>
-        <meta name="description" content={details || `Get ${name} at SonicZone. Enjoy premium sound quality and style.`} />
-        {/* Dynamic Open Graph tags for rich social previews */}
-        <meta property="og:title" content={`${name} - SonicZone`} />
-        <meta property="og:description" content={details || `Get ${name} at SonicZone for $${price}.`} />
-        <meta property="og:type" content="product" />
-        {image && <meta property="og:image" content={urlFor(image[0]).url()} />}
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${name} - SonicZone`} />
-        <meta name="twitter:description" content={details || `Get ${name} at SonicZone for $${price}.`} />
-      </Head>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img 
-              src={urlFor(image && image[index])} 
-              alt={name}
-              className="product-detail-image" 
-              onClick={() => setIsZoomed(true)}
-            />
+            <img src={urlFor(image && image[index])} className="product-detail-image" />
           </div>
-          
-          {isZoomed && (
-            <div className="lightbox-overlay" onClick={() => setIsZoomed(false)}>
-              <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-                <button className="lightbox-close" onClick={() => setIsZoomed(false)}>✕</button>
-                <img src={urlFor(image && image[index])} alt={`${name} - zoomed view`} className="lightbox-image" />
-              </div>
-            </div>
-          )}
           <div className="small-images-container">
             {image?.map((item, i) => (
               <img 
                 key={i}
                 src={urlFor(item)}
-                alt={`Product thumbnail ${i + 1}`}
-                role="button"
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
               />
@@ -114,7 +45,9 @@ const ProductDetails = ({ product, products }) => {
               <AiFillStar />
               <AiOutlineStar />
             </div>
-            <p>(20)</p>
+            <p>
+              (20)
+            </p>
           </div>
           <h4>Details: </h4>
           <p>{details}</p>
@@ -122,14 +55,14 @@ const ProductDetails = ({ product, products }) => {
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus" aria-label="Decrease quantity" onClick={decQty}><AiOutlineMinus /></span>
+              <span className="minus" onClick={decQty}><AiOutlineMinus /></span>
               <span className="num">{qty}</span>
-              <span className="plus" aria-label="Increase quantity" onClick={incQty}><AiOutlinePlus /></span>
+              <span className="plus" onClick={incQty}><AiOutlinePlus /></span>
             </p>
           </div>
           <div className="buttons">
-            <button type="button" aria-label="Add item to cart" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add to Cart</button>
-            <button type="button" aria-label="Buy item now" className="buy-now" onClick={handleBuyNow}>Buy Now</button>
+            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add to Cart</button>
+            <button type="button" className="buy-now" onClick={handleBuyNow}>Buy Now</button>
           </div>
         </div>
       </div>
@@ -178,7 +111,8 @@ export const getStaticProps = async ({ params: { slug }}) => {
   const products = await client.fetch(productsQuery);
 
   return {
-    props: { products, product }
+    props: { products, product },
+    revalidate: 60,
   }
 }
 

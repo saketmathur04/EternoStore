@@ -18,7 +18,7 @@ const FooterBanner = ({ footerBanner: { discount, largeText1, largeText2, saleTi
           <h3>{midText}</h3>
           <p>{desc}</p>
           <Link href={`/product/${product}`}>
-            <button type="button" aria-label={`${buttonText} - ${product}`}>{buttonText}</button>
+            <button type="button">Shop the Sale</button>
           </Link>
         </div>
 
